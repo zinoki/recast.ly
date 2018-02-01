@@ -14,7 +14,6 @@ class Search extends React.Component {
       </div>);
   }
   handleClick() {
-  console.log(this.props.setNewData, 'this is the funtion')
     var value = $('#search').val();
     var option = {
       'key':window.YOUTUBE_API_KEY,
