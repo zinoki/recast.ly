@@ -2,12 +2,17 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectVideo: exampleVideoData[0]
+      selectVideo: exampleVideoData[0],
+      videoData: exampleVideoData
     };
   }
-
+  
+  setNewData(data) {
+    console.log(data);
+    this.setState({videoData: data});
+  }
   onVideoSelected(video) {
-    this.setState({selectVideo: video})
+    this.setState({selectVideo: video});
   }
 
   render() {
@@ -15,7 +20,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em><Search /></h5></div>
+            <div><h5><em>search</em><Search setNewData={this.setNewData.bind(this)}/></h5></div>
           </div>
         </nav>
         <div className="row">
@@ -23,7 +28,7 @@ class App extends React.Component {
             <div><h5><em>videoPlayer</em><VideoPlayer video={this.state.selectVideo}/></h5></div>
           </div>
           <div className="col-md-5">
-            <div><h5><em>videoList</em><VideoList onVideoSelect={this.onVideoSelected.bind(this)} videos={exampleVideoData} /></h5></div>
+            <div><h5><em>videoList</em><VideoList onVideoSelect={this.onVideoSelected.bind(this)} videos={this.state.videoData} /></h5></div>
           </div>
         </div>
       </div>

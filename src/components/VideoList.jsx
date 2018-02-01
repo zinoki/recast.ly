@@ -1,26 +1,10 @@
-// class VideoList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       main: true
-//     }
-//   }
-
-//   onVideoListClick() {
-
-//   }
-// }
-
-
 var VideoList = (props) => {
-
-  console.log(props.onVideoSelect)
   
   return (<div className="video-list">
     {props.videos.map(video => 
       <VideoListEntry onVideoSelect={props.onVideoSelect} key={video.id.videoId} video={video} />
     )}
-  </div>)
+  </div>);
 };
 
 // PropTypes tell other developers what `props` a component expects
