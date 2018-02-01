@@ -1,9 +1,23 @@
+// class VideoList extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       main: true
+//     }
+//   }
+
+//   onVideoListClick() {
+
+//   }
+// }
+
+
 var VideoList = (props) => (
 
   <div className="video-list">
     {props.videos.map(video => 
-    <VideoListEntry key={video.id.videoId} video={video} />
-  )}
+      <VideoListEntry key={video.id.videoId} video={video} />
+    )}
   </div>
 );
 
